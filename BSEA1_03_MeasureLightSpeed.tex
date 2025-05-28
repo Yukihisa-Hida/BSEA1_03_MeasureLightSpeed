@@ -14,7 +14,9 @@
 
 
 \section{実験の目的}
-光速度は物理学のもっとも基本的な定数のひとつであり, 国際単位系の$\mathrm{m}$の定義にも採用されている. 本実験ではこの光速度と, それに加えて同軸ケーブルを伝わる信号の速度の測定を行う.
+光速度は物理学のもっとも基本的かつ重要な定数のひとつであり, 1983年から国際単位系（SI）の$\mathrm{m}$の定義は, 真空中における光速度を基準として定めている. そのため光速度の性格な測定は極めて重要な意味を持つ.
+
+本実験ではこの光速度と, それに加えて同軸ケーブルを伝わる信号の速度の測定を行う.
 
 
 
@@ -55,7 +57,7 @@
 
 \subsection{光速度の測定}
 
-本実験では以下のような装置を用いて測定を行った.
+本実験では図\ref{fg:lightspeed-method}のような装置を用いて測定を行った.
 図中の半導体レーザー（レーザーダイオード）は波長$685\,\mathrm{nm}$の赤色光を出す.
 そこでパルス発生器からレーザーに電圧を加え, 幅約$10\,\mathrm{ns}$の光パルスを出力させる.
 この短い光パルスを観測するために, 応答時間が$1\,\mathrm{nm}$以下の光検出器, ここではpinフォトダイオード（pin接合のダイオード）を使用する.
@@ -64,6 +66,7 @@
   \begin{center}
     \includegraphics[width=110mm]{experimental_method_picture.png}
     \caption{光速度の測定装置}
+    \label{fg:lightspeed-method}
   \end{center}
 \end{figure}
 
@@ -71,20 +74,25 @@
 また, 半導体レーザーとプリズム反射器の間でレーザーの一部を半透明鏡で反射させ, 同じ光検出器に導く.
 
 光検出器の出力信号をオシロスコープに導き, 2つの光パルスの時間間隔$T$を測定する.
-加えて, プリズム反射器を通じて光検出器に入る光路（長距離経路）と, 半透明鏡を通じて光検出器に入る光路（短距離経路）との差$L$を測定する.
+加えて, プリズム反射器を通じて光検出器に入る光路（長距離経路）と, 半透明鏡を通じて光検出器に入る光路（短距離経路）との差$L$を図\ref{fg:lightspeed-distance}のように測定する.
 
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=95mm]{experimental_distance_picture.png}
     \caption{光路の測定}
+    \label{fg:lightspeed-distance}
   \end{center}
 \end{figure}
 
-プリズムのガラスの屈折率を$n$とすると, 光路差$L$は以下の式で求められる.
+プリズムのガラスの屈折率を$n$とすると, 光路差$L$は次の式(\ref{eq:L})で求められる.
 \begin{equation}
   \label{eq:L}
   L=d_1+d_2-d_3+n(l_0-l_1)+l_1
 \end{equation}
+
+
+\subsection{同軸ケーブルを伝わる信号速度の測定}
+
 
 
 
@@ -93,14 +101,7 @@
 
 \subsection{光速度の測定}
 
-以下に今回の実験で観測したオシロスコープの画面および光路を測定した結果を示す.
-
-\begin{figure}[H]
-  \begin{center}
-    \includegraphics[scale=0.3]{lightspeed_result_picture.jpg}
-    \caption{光速度計測のオシロスコープの画面}
-  \end{center}
-\end{figure}
+次の表\ref{tb:lightspeed-distance}に, 光路の測定結果を示す.
 
 \begin{table}[h]
   \centering
@@ -115,13 +116,26 @@
     \hline
     平均 & 2379.2 & 2869.9 & 521.4 & 178.0 & 128.5 \\
     \hline
+    \label{tb:lightspeed-distance}
   \end{tabular}
 \end{table}
 
 この光路の測定結果より, 光路差$L$は式(\ref{eq:L})より求められる.
-\cite{Glass-Materials}より, プリズムのガラスの屈折率を$n=1.513$として計算すると$L=4931.1\,\mathrm{mm}$と求められる.
+実験で使用した直角プリズムの材料をBK7と仮定すると, \cite{Glass-Materials}より屈折率は$n=1.513$となる.
+これを用いて計算すると$L=4931.1\,\mathrm{mm}$と求められる.
 
-よって光路差$T$とパルスの時間間隔$T$より, 光速度$c$は以下のようになる.
+次に, 今回の実験で観測したオシロスコープの画面を以下の図\ref{fg:lightspeed-oscilloscope}に示す.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[scale=0.3]{lightspeed_result_picture.jpg}
+    \caption{光速度の測定におけるオシロスコープの画面}
+    \label{fg:lightspeed-oscilloscope}
+  \end{center}
+\end{figure}
+
+これより, パルスの時間間隔$T=17.0\,\mathrm{nm}$と測定できた.
+よって光路差$L$とパルスの時間間隔$T$より, 光速度$c$の測定結果を次の表\ref{tb:lightspeed-result}に示す.
 
 \begin{table}[h]
   \centering
@@ -130,10 +144,12 @@
     \hline
     $L/\mathrm{mm}$ & $T/\mathrm{ns}$ & $c/\mathrm{ms^{-1}}$ & 文献値\cite{light-speed} & 誤差 \\
     \hline
-    4931.1 & 17.0 & $2.901\times10^8$ & $2.998\times10^8$ & $0.097\times10^8$ \\
+    4931.1 & 17.0 & $2.901\times10^8$ & $2.998\times10^8$ & $-0.097\times10^8$ \\
     \hline
+    \label{tb:lightspeed-result}
   \end{tabular}
 \end{table}
+
 
 
 \subsection{同軸ケーブルを伝わる信号速度の測定}
@@ -176,9 +192,9 @@
     ケーブル & $L/\mathrm{m}$ & $T/\mathrm{ns}$ & $v/\mathrm{ms^{-1}}$ \\
     \hline
     1 & 2.04 & 21.0 & $1.94\times10^8$ \\
-    2 & 7.61 & 34.0 & $0.448\times10^8$ \\
+    2 & 7.61 & 34.0 & $4.48\times10^8$ \\
     2 & 5.06 & 34.2 & $2.96\times10^8$ \\
-    4 & 10.03 & 27.2 & $0.738\times10^8$ \\
+    4 & 10.03 & 27.2 & $7.38\times10^8$ \\
     \hline
   \end{tabular}
 \end{table}
